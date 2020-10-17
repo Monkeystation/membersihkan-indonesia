@@ -18,7 +18,8 @@ intro:
 problem:
   image_item:
     image: /img/why-problem2.jpg
-    caption: Foto oleh Job Wind [Google Maps]
+    caption: Foto oleh [Job Wind](https://monkeystation.nl/) [[Google
+      Maps](https://goo.gl/maps/7dxQ9evqARWsLTX36)]
   heading: Inilah mengapa sampah plastik menjadi masalah
   text: >-
     Plastik terbuat dari produk kimia dan karena itu sulit terurai secara alami.
@@ -29,7 +30,8 @@ problem:
 cause:
   image_item:
     image: /img/how-ocean.jpg
-    caption: Foto oleh Job Wind [Google Maps]
+    caption: Foto oleh [Job Wind](https://monkeystation.nl/) [[Google
+      Maps](https://goo.gl/maps/RpeKk97iPqJgM7bBA)]
   heading: Ini adalah bagaimana sampah plastik berakhir di lautan
   text: >-
     Sampah plastik berakhir di lautan melalui sungai. Kita membuang sampah ke
@@ -49,7 +51,7 @@ cause:
 solution:
   image_item:
     image: /img/what-do.jpg
-    caption: Foto oleh Zainul Yasni
+    caption: Foto oleh [Zainul Yasni](https://unsplash.com/@zainulyasni6118)
   heading: Ini yang bisa kita lakukan
   we:
     caption: Kita
@@ -88,7 +90,7 @@ solution:
 other:
   image_item:
     image: /img/other-solutions.jpg
-    caption: Foto oleh Get Plastic
+    caption: Foto oleh [Get Plastic](http://www.getplastic.org/)
   heading: Dan ini adalah solusi lainnya
   text: "Perubahan besar membutuhkan waktu untuk dapat terwujud, sementara kita
     tidak memiliki banyak waktu lagi. Untungnya ada solusi lain yang dapat
@@ -102,7 +104,7 @@ other:
 social:
   image_item:
     image: /img/conclusion.jpg
-    caption: Foto oleh Job Wind
+    caption: Foto oleh [Job Wind](https://monkeystation.nl/)
   heading: Ayo bersihkan Indonesia!
   text: >-
     Sebarkan informasi ini dan bagikan dengan semua teman Anda!
