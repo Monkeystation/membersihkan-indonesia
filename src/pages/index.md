@@ -12,7 +12,7 @@ intro:
   text: >-
     Indonesia tenggelam dalam plastik.
 
-    Setiap tahun 1,29 juta ton plastik berakhir di sungai dan lautan Indonesia (sebanding dengan berat 1.000.000 mobil).
+    **Setiap tahun 1,29 juta ton plastik** berakhir di sungai dan lautan **Indonesia** (sebanding dengan berat 1.000.000 mobil).
 
     Situasi ini akan mengakibatkan bencana bagi lingkungan dan sistem ekologi.
 problem:
@@ -22,11 +22,12 @@ problem:
       Maps](https://goo.gl/maps/7dxQ9evqARWsLTX36)]
   heading: Inilah mengapa sampah plastik menjadi masalah
   text: >-
-    Plastik terbuat dari produk kimia dan karena itu sulit terurai secara alami.
-    Jika berakhir di bumi, plastik akan tetap ada selama ratusan tahun.
-    Kebanyakan jenis plastik membutuhkan waktu penguraian 400 hingga 600 tahun. 
+    Plastik terbuat dari produk kimia dan karena itu **sulit terurai secara
+    alami**. Jika berakhir di bumi, plastik akan tetap ada selama ratusan tahun.
+    Kebanyakan jenis plastik membutuhkan **waktu penguraian 400 hingga 600
+    tahun**. 
 
-    Banyaknya sampah plastik yang berakhir di lautan setiap hari dapat menjadi bencana lingkungan.
+    Banyaknya sampah plastik yang berakhir di lautan setiap hari dapat menjadi **bencana lingkungan**.
 cause:
   image_item:
     image: /img/how-ocean.jpg
@@ -34,20 +35,22 @@ cause:
       Maps](https://goo.gl/maps/RpeKk97iPqJgM7bBA)]
   heading: Ini adalah bagaimana sampah plastik berakhir di lautan
   text: >-
-    Sampah plastik berakhir di lautan melalui sungai. Kita membuang sampah ke
-    lingkungan lalu sungai membawanya ke laut. Sebagian besar dari kita tidak
+    **Sampah plastik berakhir di lautan melalui sungai**. Kita membuang sampah
+    ke lingkungan lalu sungai membawanya ke laut. Sebagian besar dari kita tidak
     menyadari bahwa secara tidak langsung kita bertanggung jawab atas masalah
     tersebut.
 
-    Banyak dari kita tinggal di desa-desa terpencil yang tidak memiliki pengelolaan limbah kolektif.
+    Banyak dari kita tinggal di desa-desa terpencil yang **tidak** memiliki **pengelolaan limbah kolektif**.
 
     Kita terbiasa memakai sungai untuk tempat pembuangan sampah. Hal tersebut merupakan solusi yang baik pada saat itu. Karena kebanyakan jenis sampah yang dulu kita punyai adalah sampah yang dapat terurai secara alami, karenanya tidak berbahaya bagi alam.
 
-    Masalah besar kemudian muncul, karena sampah kita telah berubah, namun kebiasaan kita membuang sampah, belum berubah.
+    Masalah besar kemudian muncul, karena **sampah kita telah berubah, namun kebiasaan kita membuang sampah, belum berubah**.
   video_item:
     video: https://www.youtube.com/embed/AWgfOND2y68
     title: title
-    caption: Video oleh Rich Horner [Google Maps]
+    caption: Video oleh [Rich
+      Horner](https://www.facebook.com/cheeseandjamsandwich/videos/10156598097768183)
+      [[Google Maps](https://goo.gl/maps/8kBBYh7gM4HWjq6U6)]
 solution:
   image_item:
     image: /img/what-do.jpg
