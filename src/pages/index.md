@@ -100,11 +100,13 @@ other:
     tidak memiliki banyak waktu lagi. Untungnya ada solusi lain yang dapat
     membantu mencegah plastik agar tidak berakhir di lautan:"
   items:
-    - item: Organisasi Get Plastic telah mengembangkan perangkat yang mengubah plastik
-        menjadi bahan bakar minyak.
-    - item: Kegiatan yang secara teratur diselenggarakan untuk membersihkan
-        pantai-pantai Indonesia.
-    - item: Melakukan penyaringan sampah plastik di Sungai sebelum mencapai laut.
+    - item: Organisasi **[Get Plastic](http://www.getplastic.org/)** telah
+        mengembangkan perangkat yang mengubah plastik menjadi bahan bakar
+        minyak.
+    - item: Kegiatan yang secara teratur diselenggarakan untuk **membersihkan
+        pantai-pantai** Indonesia.
+    - item: "**Melakukan penyaringan sampah plastik di Sungai** sebelum mencapai
+        laut."
 social:
   image_item:
     image: /img/conclusion.jpg
