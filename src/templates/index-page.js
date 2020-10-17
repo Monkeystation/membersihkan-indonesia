@@ -3,111 +3,26 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import Features from '../components/Features'
-import BlogRoll from '../components/BlogRoll'
 
 export const IndexPageTemplate = ({
-  image,
-  title,
-  heading,
-  subheading,
-  mainpitch,
-  description,
+  button_support,
   intro,
+  problem,
+  cause,
+  solution,
+  other,
+  social
 }) => (
   <div>
-    <div
-      className="full-width-image margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
-        backgroundPosition: `top left`,
-        backgroundAttachment: `fixed`,
-      }}
-    >
-      <div
-        style={{
-          display: 'flex',
-          height: '150px',
-          lineHeight: '1',
-          justifyContent: 'space-around',
-          alignItems: 'left',
-          flexDirection: 'column',
-        }}
-      >
-        <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-          style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-        >
-          {title}
-        </h1>
-        <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-          style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-        >
-          {subheading}
-        </h3>
-      </div>
+    <section className="hero is-fullheight">
+    <div className="hero-video">
+        <video poster={intro.video_item.image} playsInline="" autoPlay="" muted="" loop="">
+            <source src={intro.video_item.video} type="video/mp4" />
+        </video>
     </div>
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="section">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <div className="content">
-                <div className="content">
-                  <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
-                  </div>
-                  <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
-                  </div>
-                </div>
-                <div className="columns">
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      {heading}
-                    </h3>
-                    <p>{description}</p>
-                  </div>
-                </div>
-                <Features gridItems={intro.blurbs} />
-                <div className="columns">
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/products">
-                      See all products
-                    </Link>
-                  </div>
-                </div>
-                <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2">
-                    Latest stories
-                  </h3>
-                  <BlogRoll />
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/blog">
-                      Read more
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div className="hero-body">
+        <div className="container is-centered">
+          <button className="button">{intro.button}</button>
         </div>
       </div>
     </section>
@@ -115,15 +30,13 @@ export const IndexPageTemplate = ({
 )
 
 IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
-  heading: PropTypes.string,
-  subheading: PropTypes.string,
-  mainpitch: PropTypes.object,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
+  button_support: PropTypes.string,
+  intro: PropTypes.object,
+  problem: PropTypes.object,
+  cause: PropTypes.object,
+  solution: PropTypes.object,
+  other: PropTypes.object,
+  social: PropTypes.object
 }
 
 const IndexPage = ({ data }) => {
@@ -132,13 +45,13 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
-        title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
+        button_support={frontmatter.button_support}
         intro={frontmatter.intro}
+        problem={frontmatter.problem}
+        cause={frontmatter.cause}
+        solution={frontmatter.solution}
+        other={frontmatter.other}
+        social={frontmatter.social}
       />
     </Layout>
   )
@@ -158,34 +71,119 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        title
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
+        button_support
+        intro {
+          heading
+          text
+          button
+          video_item {
+            video {
+              publicURL
             }
+            poster {
+              publicURL
+            }
+            caption
           }
         }
-        heading
-        subheading
-        mainpitch {
-          title
-          description
-        }
-        description
-        intro {
-          blurbs {
+        problem {
+          heading
+          text
+          image_item {
+            caption
             image {
               childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
+                fluid(maxWidth: 1920, quality: 80) {
                   ...GatsbyImageSharpFluid
                 }
               }
             }
-            text
           }
+        }
+        cause {
           heading
-          description
+          text
+          image_item {
+            caption
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1920, quality: 80) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          video_item {
+            video {
+              publicURL
+            }
+            caption
+          }
+        }
+        solution {
+          heading
+          image_item {
+            caption
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1920, quality: 80) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          we {
+            caption
+            text
+            items {
+              item
+            }
+          }
+          community {
+            caption
+            text
+            items {
+              item
+            }
+          }
+          government {
+            caption
+            text
+            items {
+              item
+            }
+          }
+        }
+        other {
+          heading
+          text
+          image_item {
+            caption
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1920, quality: 80) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+          items {
+            item
+          }
+        }
+        social {
+          heading
+          text
+          image_item {
+            caption
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1920, quality: 80) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
         }
       }
     }
