@@ -59,35 +59,36 @@ solution:
   we:
     caption: Kita
     items:
-      - item: Jangan pernah membuang sampah plastik ke alam.
-      - item: Kurangi limbah plastik sekali pakai kita.
-      - item: Beri tahu keluarga dan teman - teman kita tentang dampak sampah plastik.
-      - item: Tegur mereka yang membuang sampah plastik ke alam.
-      - item: Diskusikan masalah dan solusinya dengan kepala lingkungan atau kepala
-          desa.
+      - item: "**Jangan pernah membuang sampah plastik** ke alam."
+      - item: "**Kurangi** limbah **plastik sekali pakai** kita."
+      - item: "**Beri tahu keluarga dan teman - teman kita** tentang dampak sampah
+          plastik."
+      - item: "**Tegur mereka** yang membuang sampah plastik ke alam."
+      - item: "**Diskusikan masalah dan solusinya** dengan kepala lingkungan atau kepala
+          desa."
     text: lalala
   community:
     caption: Masyarakat
     text: "Merupakan tugas dari kepala lingkungan untuk menginisiasi tindakan
       pengumpulan sampah plastik. Hal ini dapat dilakukan dengan:"
     items:
-      - item: Menempatkan tempat sampah untuk plastik.
-      - item: Membuat program pengelolaan limbah desa.
-      - item: Pembangunan tempat pembuangan sampah.
+      - item: Menempatkan **tempat sampah** untuk plastik.
+      - item: Membuat program **pengelolaan limbah** desa.
+      - item: Pembangunan tempat **pembuangan sampah**.
   government:
     caption: Pemerintah
     text: "Pemerintah memiliki kekuatan untuk mengimplementasikan perubahan besar
       akan bahaya dari sampah plastik. Sebagai contoh:"
     items:
-      - item: Mengurangi produsen menggunakan plastik dengan memperkenalkan pajak
-          plastik.
-      - item: Menciptakan kesadaran untuk masalah sampah plastik melalui kampanye
-          nasional.
-      - item: Membangun pabrik daur ulang plastik dan membuat sistem nasional untuk
-          mengumpulkan sampah plastik.
-      - item: Melarang produk plastik sekali pakai seperti kantong plastik dan gelas
-          plastik.
-      - item: Memperkenalkan sistem deposit botol. Masyarakat dapat membayar deposit
+      - item: Mengurangi produsen menggunakan plastik dengan memperkenalkan **pajak
+          plastik**.
+      - item: Menciptakan **kesadaran** untuk masalah sampah plastik melalui **kampanye
+          nasional**.
+      - item: Membangun **pabrik daur ulang** plastik dan membuat sistem nasional untuk
+          **mengumpulkan** sampah plastik.
+      - item: "**Melarang produk plastik sekali pakai** seperti kantong plastik dan
+          gelas plastik."
+      - item: Memperkenalkan **sistem deposit botol**. Masyarakat dapat membayar deposit
           untuk menggunakan botol kosong dan mendapatkan kembali uang deposit
           ketika mengembalikan botol tersebut.
 other:
@@ -110,14 +111,12 @@ social:
     caption: Foto oleh [Job Wind](https://monkeystation.nl/)
   heading: Ayo bersihkan Indonesia!
   text: >-
-    Sebarkan informasi ini dan bagikan dengan semua teman Anda!
+    **Sebarkan informasi ini dan bagikan dengan semua teman Anda!**
 
 
-    Posting photo mengenai masalah plastik yang mencemaskan dan berdampak bagi lingkungan kita ke Instagram dengan memberikan hestek #membersihkanindonesia
+    Posting photo mengenai masalah plastik yang mencemaskan dan berdampak bagi lingkungan kita ke Instagram dengan memberikan hestek **\#membersihkanindonesia**\
 
-
-    Postingan kamu akan muncul di bawah ini!
-
+    Postingan kamu akan muncul di bawah ini!\
 
     Jika kamu tidak memiliki akun Instagram, kamu juga dapat membagikan situs web ini di Facebook atau Twitter:
 ---
