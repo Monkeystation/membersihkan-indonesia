@@ -7,7 +7,8 @@ intro:
   video_item:
     video: /img/header.mp4
     poster: /img/header.jpg
-    caption: Video oleh Rich Horner
+    caption: Video oleh [Rich
+      Horner](https://www.facebook.com/cheeseandjamsandwich/videos/10156598097768183)
   text: >-
     Indonesia tenggelam dalam plastik.
 
