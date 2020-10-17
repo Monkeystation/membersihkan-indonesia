@@ -6,7 +6,7 @@ intro:
   button: APA YANG SEDANG TERJADI?
   video_item:
     video: /img/header.mp4
-    image: /img/header.jpg
+    poster: /img/header.jpg
     caption: Video oleh Rich Horner
   text: >-
     Indonesia tenggelam dalam plastik.
@@ -42,7 +42,8 @@ cause:
 
     Masalah besar kemudian muncul, karena sampah kita telah berubah, namun kebiasaan kita membuang sampah, belum berubah.
   video_item:
-    video: https://www.youtube.com/watch?v=AWgfOND2y68
+    video: https://www.youtube.com/embed/AWgfOND2y68
+    title: title
     caption: Video oleh Rich Horner [Google Maps]
 solution:
   image_item:

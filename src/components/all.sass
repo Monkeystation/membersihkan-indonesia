@@ -1,16 +1,51 @@
 @import "~bulma/sass/utilities/initial-variables"
 
 // Config vars
-// Kaldi logo brand color: #FD461E
-$kaldi-red: #D64000
-$kaldi-red-invert: #fff
-
-$primary: $kaldi-red
-$primary-invert: $kaldi-red-invert
-$body-color: #333
-$black: #2b2523
-
-.is-centered
-  text-align: center;
+$primary: #6ccdd9
+$primary-invert: #f9f9e8
+$primary-light: #f9f9e8
+$primary-dark: #6ccdd9
+$light: #f9f9e8
+$body-color: #333333
+$black: #333333
+$body-background-color: #f9f9e8
+//$body-size: 22px
+$body-font-size: 1.5rem
+$size-1: 3.5rem
+$navbar-height: 4rem
+$navbar-item-img-max-height: 3rem
+$footer-padding: 1.5rem
 
 @import "~bulma"
+
+.container
+  padding: 5rem 0
+  width: 100% !important
+  max-width: 580px !important
+
+.is-bold
+  font-weight: bold
+
+.hero.header
+  background-repeat: no-repeat
+  background-size: cover
+
+.hero.content
+  position: relative
+
+.caption
+  position: absolute
+  top: 5px
+  right: 10px
+
+.intro
+  .header
+    video
+      object-fit: cover;
+
+.react-parallax-content
+  .container
+    height: 500px
+    display: flex
+    align-items: flex-end
+
