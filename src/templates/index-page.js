@@ -200,7 +200,7 @@ export const IndexPageTemplate = ({
       <section className="juicer">
         <section className="content hero section"
           style={{backgroundImage:`url(${'/img/shells.png'})`}}>
-          <div className="tijger">
+          <div>
           <h1 className="title is-2 has-text-primary has-text-centered">#membersihkanindonesia</h1>
           <ul className="juicer-feed" data-feed-id="membersihkanindonesia" data-per="12">
             <h1 className="referral"><a href="https://www.juicer.io">Powered by Juicer</a></h1>
