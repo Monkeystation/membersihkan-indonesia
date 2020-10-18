@@ -118,6 +118,7 @@ export const IndexPageTemplate = ({
           style={{backgroundImage:`url(${'/img/shells.png'})`}}>
           <div className="container">
             <h1 className="is-size-1 has-text-primary">{solution.community.caption}</h1>
+            <p>{solution.community.text}</p>
             <ul>
               {solution.community.items.map((item, index) => (
                 <li key={`item` + index}>
@@ -131,6 +132,7 @@ export const IndexPageTemplate = ({
           style={{backgroundImage:`url(${'/img/fish.png'})`}}>
           <div className="container">
             <h1 className="is-size-1 has-text-light">{solution.government.caption}</h1>
+            <p>{solution.government.text}</p>
             <ul>
               {solution.government.items.map((item, index) => (
                 <li key={`item` + index}>
