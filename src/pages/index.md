@@ -4,11 +4,9 @@ button_support: Dukung kami
 intro:
   heading: Inilah yang sedang terjadi
   button: APA YANG SEDANG TERJADI?
-  video_item:
-    video: /img/header.mp4
-    poster: /img/header.jpg
-    caption: Video oleh [Rich
-      Horner](https://www.facebook.com/cheeseandjamsandwich/videos/10156598097768183)
+  image_item:
+    image: /img/header.jpg
+    caption: Foto oleh [Job Wind](https://monkeystation.nl/)
   text: >-
     Indonesia tenggelam dalam plastik.
 

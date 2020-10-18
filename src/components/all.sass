@@ -6,6 +6,7 @@ $primary-invert: #f9f9e8
 $primary-light: #f9f9e8
 $primary-dark: #6ccdd9
 $light: #f9f9e8
+$link: #f05a4b
 $body-color: #333333
 $black: #333333
 $body-background-color: #f9f9e8
@@ -14,17 +15,34 @@ $body-font-size: 1.5rem
 $size-1: 3.5rem
 $navbar-height: 4rem
 $navbar-item-img-max-height: 3rem
+$navbar-background-color: $primary
 $footer-padding: 1.5rem
 
 @import "~bulma"
 
+html
+  +mobile
+    font-size: 12px
+    .title.is-1
+      font-size: 3rem
+
+.navbar-menu
+  .navbar-item .social
+    padding: 0.5rem
+  &.is-active
+    .navbar-end
+      display: flex
+      justify-content: center
+
 .container
-  padding: 5rem 0
   width: 100% !important
-  max-width: 580px !important
+  max-width: 640px !important
+  &.content
+    padding: 5rem 0
 
 .is-bold
   font-weight: bold
+
 
 .hero.header
   background-repeat: no-repeat
@@ -39,13 +57,35 @@ $footer-padding: 1.5rem
   right: 10px
 
 .intro
-  .header
+  .hero-video
+    background: $primary
     video
       object-fit: cover;
+      -webkit-filter: blur(2px);
 
 .react-parallax-content
   .container
     height: 500px
     display: flex
     align-items: flex-end
+    +mobile
+      height: 250px
 
+.hero-video
+  +mobile
+    display: block
+
+.j-loading
+  border-color: $primary !important
+  &:before 
+    background-color: $primary !important
+
+.juicer-feed .j-paginate
+  color: $primary !important
+  border: 2px solid $primary !important
+  &:hover
+    color: $light !important
+    background: $primary !important
+
+.social-share a
+  padding: 5px

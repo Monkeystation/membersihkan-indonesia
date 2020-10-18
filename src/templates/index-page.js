@@ -2,12 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
-
+import { FaFacebookF, FaTwitter } from 'react-icons/fa';
 
 import Layout from '../components/Layout'
 import Video from '../components/Video'
 import PreviewCompatibleFile from '../components/PreviewCompatibleFile'
-import { Parallax } from 'react-parallax';
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import { Parallax } from 'react-parallax'
+var md = require('markdown-it')()
 
 export const IndexPageTemplate = ({
   button_support,
@@ -18,16 +20,17 @@ export const IndexPageTemplate = ({
   other,
   social
 }) => {
-  console.log(problem)
-  const parallaxStrength = 300
+  const parallaxStrength = (window.innerWidth > 768) ? 300 : 100
+  console.log(problem.image_item.image.childImageSharp.fluid)
   return (
     <>
       <section className="intro">
         <section className="header hero is-fullheight-with-navbar">
         <div className="hero-video">
-          <video poster={PreviewCompatibleFile(intro.video_item.poster)} playsInline autoPlay muted loop>
-            <source src={PreviewCompatibleFile(intro.video_item.video)} type="video/mp4" />
-          </video>
+        <PreviewCompatibleImage imageInfo={{
+          image: intro.image_item.image,
+          style: {height: '100%'}
+        }} />
         </div>
           <div className="hero-body">
             <div className="container has-text-centered">
@@ -35,88 +38,100 @@ export const IndexPageTemplate = ({
             </div>
           </div>
         </section>
-        <section className="content hero" id="intro"
+        <section className="content hero section" id="intro"
           style={{backgroundImage:`url(${'/img/shells.png'})`}}>
-          <span className="caption is-size-7">{intro.video_item.caption}</span>
+          <span className="caption is-size-7" dangerouslySetInnerHTML={{__html: md.render(intro.image_item.caption)}}></span>
           <div className="container has-text-centered">
             <h1 className="title is-1 has-text-primary">{intro.heading}</h1>
-            <p>{intro.text}</p>
+            <div dangerouslySetInnerHTML={{__html: md.render(intro.text)}}></div>
           </div>
         </section>
       </section>
 
       <section className="problem">
-        <Parallax bgImage={PreviewCompatibleFile(problem.image_item.image)} strength={parallaxStrength}>
-          <div className="container has-text-centered">
+        <Parallax 
+          bgImage={PreviewCompatibleFile(problem.image_item.image.childImageSharp.fluid.src)} 
+          bgImageSizes={problem.image_item.image.childImageSharp.fluid.sizes}
+          bgImageSrcSet={problem.image_item.image.childImageSharp.fluid.srcSet}
+          strength={parallaxStrength}>
+          <section className="container has-text-centered section">
             <h1 className="title is-1 has-text-light">{problem.heading}</h1>
-          </div>
+          </section>
         </Parallax>
-        <section className="content hero"
+        <section className="content hero section"
           style={{backgroundImage:`url(${'/img/fish.png'})`}}>
-          <span className="caption is-size-7">{problem.image_item.caption}</span>
+          <span className="caption is-size-7" dangerouslySetInnerHTML={{__html: md.render(problem.image_item.caption)}}></span>
           <div className="container has-text-centered">
-            <p>{problem.text}</p>
+            <div dangerouslySetInnerHTML={{__html: md.render(problem.text)}}></div>
           </div>
         </section>
       </section>
 
       <section className="cause">
-        <Parallax bgImage={PreviewCompatibleFile(cause.image_item.image)} strength={parallaxStrength}>
-          <div className="container has-text-centered">
+        <Parallax 
+          bgImage={PreviewCompatibleFile(cause.image_item.image.childImageSharp.fluid.src)} 
+          bgImageSizes={cause.image_item.image.childImageSharp.fluid.sizes}
+          bgImageSrcSet={cause.image_item.image.childImageSharp.fluid.srcSet}
+          strength={parallaxStrength}>
+          <div className="container has-text-centered section">
             <h1 className="title is-1 has-text-light">{cause.heading}</h1>
           </div>
         </Parallax>
-        <section className="content hero"
+        <section className="content hero section"
           style={{backgroundImage:`url(${'/img/shells.png'})`}}>
-          <span className="caption is-size-7">{cause.image_item.caption}</span>
+          <span className="caption is-size-7" dangerouslySetInnerHTML={{__html: md.render(cause.image_item.caption)}}></span>
           <div className="container has-text-centered">
-            <p>{cause.text}</p>
+            <div className="pb-5" dangerouslySetInnerHTML={{__html: md.render(cause.text)}}></div>
             <Video videoSrcURL={cause.video_item.video} videoTitle={cause.video_item.title} />
           </div>
         </section>
       </section>
 
       <section className="solution">
-        <Parallax bgImage={PreviewCompatibleFile(solution.image_item.image)} strength={parallaxStrength}>
-        <div className="container has-text-centered">
+        <Parallax 
+          bgImage={PreviewCompatibleFile(solution.image_item.image.childImageSharp.fluid.src)} 
+          bgImageSizes={solution.image_item.image.childImageSharp.fluid.sizes}
+          bgImageSrcSet={solution.image_item.image.childImageSharp.fluid.srcSet}
+          strength={parallaxStrength}>
+        <div className="container has-text-centered section">
           <h1 className="title is-1 has-text-light">{solution.heading}</h1>
         </div>
         </Parallax>
-        <section className="content hero"
+        <section className="content hero section"
           style={{backgroundImage:`url(${'/img/fish.png'})`}}>
-          <span className="caption is-size-7">{solution.image_item.caption}</span>
+          <span className="caption is-size-7" dangerouslySetInnerHTML={{__html: md.render(solution.image_item.caption)}}></span>
           <div className="container">
             <h1 className="is-size-1 has-text-light">{solution.we.caption}</h1>
             <ul>
               {solution.we.items.map((item, index) => (
                 <li key={`item` + index}>
-                  <p>{item.item}</p>
+                  <div dangerouslySetInnerHTML={{__html: md.render(item.item)}}></div>
                 </li>
               ))}
             </ul>
           </div>
         </section>
-        <section className="content hero"
+        <section className="content hero section"
           style={{backgroundImage:`url(${'/img/shells.png'})`}}>
           <div className="container">
             <h1 className="is-size-1 has-text-primary">{solution.community.caption}</h1>
             <ul>
               {solution.community.items.map((item, index) => (
                 <li key={`item` + index}>
-                  <p>{item.item}</p>
+                  <div dangerouslySetInnerHTML={{__html: md.render(item.item)}}></div>
                 </li>
               ))}
             </ul>
           </div>
         </section>
-        <section className="content hero"
+        <section className="content hero section"
           style={{backgroundImage:`url(${'/img/fish.png'})`}}>
           <div className="container">
             <h1 className="is-size-1 has-text-light">{solution.government.caption}</h1>
             <ul>
               {solution.government.items.map((item, index) => (
                 <li key={`item` + index}>
-                  <p>{item.item}</p>
+                  <div dangerouslySetInnerHTML={{__html: md.render(item.item)}}></div>
                 </li>
               ))}
             </ul>
@@ -125,20 +140,24 @@ export const IndexPageTemplate = ({
       </section>
 
       <section className="other">
-        <Parallax bgImage={PreviewCompatibleFile(other.image_item.image)} strength={parallaxStrength}>
-          <div className="container has-text-centered">
+        <Parallax 
+          bgImage={PreviewCompatibleFile(other.image_item.image.childImageSharp.fluid.src)} 
+          bgImageSizes={other.image_item.image.childImageSharp.fluid.sizes}
+          bgImageSrcSet={other.image_item.image.childImageSharp.fluid.srcSet}
+          strength={parallaxStrength}>
+          <div className="container has-text-centered section">
             <h1 className="title is-1 has-text-light">{other.heading}</h1>
           </div>
         </Parallax>
-        <section className="content hero"
+        <section className="content hero section"
           style={{backgroundImage:`url(${'/img/shells.png'})`}}>
-          <span className="caption is-size-7">{other.image_item.caption}</span>
+          <span className="caption is-size-7" dangerouslySetInnerHTML={{__html: md.render(other.image_item.caption)}}></span>
           <div className="container">
             <p>{other.text}</p>
             <ul>
               {other.items.map((item, index) => (
                 <li key={`item` + index}>
-                  <p>{item.item}</p>
+                  <div dangerouslySetInnerHTML={{__html: md.render(item.item)}}></div>
                 </li>
               ))}
             </ul>
@@ -147,26 +166,38 @@ export const IndexPageTemplate = ({
       </section>
 
       <section className="social">
-        <Parallax bgImage={PreviewCompatibleFile(social.image_item.image)} strength={parallaxStrength}>
-          <div className="container has-text-centered">
+        <Parallax 
+          bgImage={PreviewCompatibleFile(social.image_item.image.childImageSharp.fluid.src)} 
+          bgImageSizes={social.image_item.image.childImageSharp.fluid.sizes}
+          bgImageSrcSet={social.image_item.image.childImageSharp.fluid.srcSet}
+          strength={parallaxStrength}>
+          <div className="container has-text-centered section">
             <h1 className="title is-1 has-text-light">{social.heading}</h1>
           </div>        
         </Parallax>
-        <section className="content hero"
+        <section className="content hero section"
           style={{backgroundImage:`url(${'/img/fish.png'})`}}>
-          <span className="caption is-size-7">{social.image_item.caption}</span>
-          <div className="container">
-            <p>{social.text}</p>
+          <span className="caption is-size-7" dangerouslySetInnerHTML={{__html: md.render(social.image_item.caption)}}></span>
+          <div className="container has-text-centered">
+            <div dangerouslySetInnerHTML={{__html: md.render(social.text)}}></div>
+            <div className="social-share pt-5">
+              <a href="https://www.facebook.com/sharer?u=https://membersihkanindonesia.org" target="_blank">
+                <FaFacebookF size={60} style={{backgroundColor:'#3b5998', color:'white', padding:'10px'}} />
+              </a>
+              <a href="http://twitter.com/intent/tweet?text=Membersihkan%20Indonesia!&hashtags=membersihkanindonesia,cleanupindonesia&url=https://membersihkanindonesia.org" target="_blank">
+                <FaTwitter size={60} style={{backgroundColor:'#1da1f2', color:'white', padding:'10px'}} />
+              </a>
+            </div>
           </div>
         </section>
       </section>
 
       <section className="juicer">
-        <section className="content hero"
+        <section className="content hero section"
           style={{backgroundImage:`url(${'/img/shells.png'})`}}>
-          <div className="container">
-          <h1 className="title is-1 has-text-primary">#membersihkanindonesia</h1>
-          <ul className="juicer-feed" data-feed-id="membersihkanindonesia" data-per="8" data-truncate="500">
+          <div className="tijger">
+          <h1 className="title is-2 has-text-primary has-text-centered">#membersihkanindonesia</h1>
+          <ul className="juicer-feed" data-feed-id="membersihkanindonesia" data-per="12">
             <h1 className="referral"><a href="https://www.juicer.io">Powered by Juicer</a></h1>
           </ul>
           </div>
@@ -223,12 +254,13 @@ export const pageQuery = graphql`
           heading
           text
           button
-          video_item {
-            video {
-              publicURL
-            }
-            poster {
-              publicURL
+          image_item {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1920, quality: 80) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
             }
             caption
           }
@@ -239,7 +271,11 @@ export const pageQuery = graphql`
           image_item {
             caption
             image {
-              publicURL
+              childImageSharp {
+                fluid(maxWidth: 1920, quality: 80) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
             }
           }
         }
@@ -249,7 +285,11 @@ export const pageQuery = graphql`
           image_item {
             caption
             image {
-              publicURL
+              childImageSharp {
+                fluid(maxWidth: 1920, quality: 80) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
             }
           }
           video_item {
@@ -262,7 +302,11 @@ export const pageQuery = graphql`
           image_item {
             caption
             image {
-              publicURL
+              childImageSharp {
+                fluid(maxWidth: 1920, quality: 80) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
             }
           }
           we {
@@ -293,7 +337,11 @@ export const pageQuery = graphql`
           image_item {
             caption
             image {
-              publicURL
+              childImageSharp {
+                fluid(maxWidth: 1920, quality: 80) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
             }
           }
           items {
@@ -306,7 +354,11 @@ export const pageQuery = graphql`
           image_item {
             caption
             image {
-              publicURL
+              childImageSharp {
+                fluid(maxWidth: 1920, quality: 80) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
             }
           }
         }
