@@ -20,8 +20,7 @@ export const IndexPageTemplate = ({
   other,
   social
 }) => {
-  const parallaxStrength = (window.innerWidth > 768) ? 300 : 100
-  console.log(problem.image_item.image.childImageSharp.fluid)
+  let parallaxStrength = (typeof window !== 'undefined' && window.innerWidth > 768) ? 300 : 100
   return (
     <>
       <section className="intro">
