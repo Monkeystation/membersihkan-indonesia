@@ -1,18 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
-import { FaFacebookF, FaTwitter } from 'react-icons/fa';
-import ReactGA from 'react-ga';
+import { Link } from 'react-scroll'
+import { FaFacebookF, FaTwitter } from 'react-icons/fa'
+import ReactGA from 'react-ga'
+import { Parallax } from 'react-parallax'
 
 import Layout from '../components/Layout'
 import Video from '../components/Video'
 import PreviewCompatibleFile from '../components/PreviewCompatibleFile'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
-import { Parallax } from 'react-parallax'
 
 var md = require('markdown-it')()
-ReactGA.initialize('UA-78821189-5');
+ReactGA.initialize('UA-78821189-5')
+ReactGA.pageview('Home')
 
 export const IndexPageTemplate = ({
   button_support,
@@ -183,10 +184,10 @@ export const IndexPageTemplate = ({
           <div className="container has-text-centered">
             <div dangerouslySetInnerHTML={{__html: md.render(social.text)}}></div>
             <div className="social-share pt-5">
-              <a href="https://www.facebook.com/sharer?u=https://membersihkanindonesia.org" target="_blank">
+              <a href="https://www.facebook.com/sharer?u=https://membersihkanindonesia.org" target="_blank" rel="noreferrer">
                 <FaFacebookF size={60} style={{backgroundColor:'#3b5998', color:'white', padding:'10px'}} />
               </a>
-              <a href="http://twitter.com/intent/tweet?text=Membersihkan%20Indonesia!&hashtags=membersihkanindonesia,cleanupindonesia&url=https://membersihkanindonesia.org" target="_blank">
+              <a href="http://twitter.com/intent/tweet?text=Membersihkan%20Indonesia!&hashtags=membersihkanindonesia,cleanupindonesia&url=https://membersihkanindonesia.org" target="_blank" rel="noreferrer">
                 <FaTwitter size={60} style={{backgroundColor:'#1da1f2', color:'white', padding:'10px'}} />
               </a>
             </div>

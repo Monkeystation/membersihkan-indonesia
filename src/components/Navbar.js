@@ -43,6 +43,9 @@ const Navbar = class extends React.Component {
           <div
             className={`navbar-burger burger ${this.state.navBarActiveClass}`}
             data-target="navMenu"
+            role="button"
+            tabIndex="0"
+            onKeyDown={() => this.toggleHamburger()}
             onClick={() => this.toggleHamburger()}
           >
             <span />
@@ -54,10 +57,10 @@ const Navbar = class extends React.Component {
         <div className={`navbar-menu ${this.state.navBarActiveClass}`}>
           <div className="navbar-end">
             <div className="navbar-item">
-              <Link className="button is-primary is-light social" to="https://www.facebook.com/membersihkanID" target={'_blank'}><FaFacebookSquare size={30} /></Link>
+              <a className="button is-primary is-light social" href="https://www.facebook.com/membersihkanID" target="_blank" rel="noreferrer" aria-label="Facebook link"><FaFacebookSquare size={30} /></a>
             </div>
             <div className="navbar-item">
-              <Link className="button is-primary is-light social" to="https://www.instagram.com/membersihkan_id/" target={'_blank'}><FaInstagramSquare size={30} /></Link>
+              <a className="button is-primary is-light social" href="https://www.instagram.com/membersihkan_id/" target="_blank" rel="noreferrer" aria-label="Instagram link"><FaInstagramSquare size={30} /></a>
             </div>
             {/* <div className="navbar-item">
               <Link className="button is-primary is-light" to="/support">Support us</Link>
