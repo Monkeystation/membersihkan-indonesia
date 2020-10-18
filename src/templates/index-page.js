@@ -3,13 +3,16 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import { FaFacebookF, FaTwitter } from 'react-icons/fa';
+import ReactGA from 'react-ga';
 
 import Layout from '../components/Layout'
 import Video from '../components/Video'
 import PreviewCompatibleFile from '../components/PreviewCompatibleFile'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import { Parallax } from 'react-parallax'
+
 var md = require('markdown-it')()
+ReactGA.initialize('UA-78821189-5');
 
 export const IndexPageTemplate = ({
   button_support,
