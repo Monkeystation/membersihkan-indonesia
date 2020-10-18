@@ -28,7 +28,7 @@ export const IndexPageTemplate = ({
     <>
       <section className="intro">
         <section className="header hero is-fullheight-with-navbar">
-        <div className="hero-video">
+        <div className="hero-image">
         <PreviewCompatibleImage imageInfo={{
           image: intro.image_item.image,
           style: {height: '100%'}
