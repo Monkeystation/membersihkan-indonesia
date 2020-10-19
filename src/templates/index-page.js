@@ -26,6 +26,7 @@ export const IndexPageTemplate = ({
   social
 }) => {
   let parallaxStrength = (typeof window !== 'undefined' && window.innerWidth > 768) ? 300 : 100
+  let parallaxHeight = (typeof window !== 'undefined' && window.innerWidth > 768) ? 500 : 250
   return (
     <>
       <section className="intro">
@@ -53,10 +54,9 @@ export const IndexPageTemplate = ({
       </section>
 
       <section className="problem">
-        <LazyParallax 
-          bgImage={PreviewCompatibleFile(problem.image_item.image.childImageSharp.fluid.src)} 
-          bgImageSizes={problem.image_item.image.childImageSharp.fluid.sizes}
-          bgImageSrcSet={problem.image_item.image.childImageSharp.fluid.srcSet}
+        <LazyParallax
+          image={problem.image_item.image}
+          height={parallaxHeight}
           strength={parallaxStrength}>
           <section className="container has-text-centered section">
             <h1 className="title is-1 has-text-light">{problem.heading}</h1>
@@ -72,10 +72,9 @@ export const IndexPageTemplate = ({
       </section>
 
       <section className="cause">
-        <LazyParallax 
-          bgImage={PreviewCompatibleFile(cause.image_item.image.childImageSharp.fluid.src)} 
-          bgImageSizes={cause.image_item.image.childImageSharp.fluid.sizes}
-          bgImageSrcSet={cause.image_item.image.childImageSharp.fluid.srcSet}
+        <LazyParallax
+          image={cause.image_item.image}
+          height={parallaxHeight}
           strength={parallaxStrength}>
           <div className="container has-text-centered section">
             <h1 className="title is-1 has-text-light">{cause.heading}</h1>
@@ -92,10 +91,9 @@ export const IndexPageTemplate = ({
       </section>
 
       <section className="solution">
-        <LazyParallax 
-          bgImage={PreviewCompatibleFile(solution.image_item.image.childImageSharp.fluid.src)} 
-          bgImageSizes={solution.image_item.image.childImageSharp.fluid.sizes}
-          bgImageSrcSet={solution.image_item.image.childImageSharp.fluid.srcSet}
+        <LazyParallax
+          image={solution.image_item.image}
+          height={parallaxHeight}
           strength={parallaxStrength}>
         <div className="container has-text-centered section">
           <h1 className="title is-1 has-text-light">{solution.heading}</h1>
@@ -146,10 +144,9 @@ export const IndexPageTemplate = ({
       </section>
 
       <section className="other">
-        <LazyParallax 
-          bgImage={PreviewCompatibleFile(other.image_item.image.childImageSharp.fluid.src)} 
-          bgImageSizes={other.image_item.image.childImageSharp.fluid.sizes}
-          bgImageSrcSet={other.image_item.image.childImageSharp.fluid.srcSet}
+        <LazyParallax
+          image={other.image_item.image}
+          height={parallaxHeight}
           strength={parallaxStrength}>
           <div className="container has-text-centered section">
             <h1 className="title is-1 has-text-light">{other.heading}</h1>
@@ -172,10 +169,9 @@ export const IndexPageTemplate = ({
       </section>
 
       <section className="social">
-        <LazyParallax 
-          bgImage={PreviewCompatibleFile(social.image_item.image.childImageSharp.fluid.src)} 
-          bgImageSizes={social.image_item.image.childImageSharp.fluid.sizes}
-          bgImageSrcSet={social.image_item.image.childImageSharp.fluid.srcSet}
+        <LazyParallax
+          image={social.image_item.image}
+          height={parallaxHeight}
           strength={parallaxStrength}>
           <div className="container has-text-centered section">
             <h1 className="title is-1 has-text-light">{social.heading}</h1>
