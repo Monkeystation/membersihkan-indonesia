@@ -4,11 +4,11 @@ import { graphql } from 'gatsby'
 import { Link } from 'react-scroll'
 import { FaFacebookF, FaTwitter } from 'react-icons/fa'
 import ReactGA from 'react-ga'
-import { Parallax } from 'react-parallax'
 
 import LazyParallax from '../components/LazyParallax'
+import LazyComponent from '../components/LazyComponent'
 import Layout from '../components/Layout'
-import Video from '../components/Video'
+import LazyVideo from '../components/LazyVideo'
 import PreviewCompatibleFile from '../components/PreviewCompatibleFile'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
@@ -86,7 +86,7 @@ export const IndexPageTemplate = ({
           <span className="caption is-size-7" dangerouslySetInnerHTML={{__html: md.render(cause.image_item.caption)}}></span>
           <div className="container has-text-centered">
             <div className="pb-5" dangerouslySetInnerHTML={{__html: md.render(cause.text)}}></div>
-            <Video videoSrcURL={cause.video_item.video} videoTitle={cause.video_item.title} />
+            <LazyVideo videoSrcURL={cause.video_item.video} videoTitle={cause.video_item.title} />
           </div>
         </section>
       </section>

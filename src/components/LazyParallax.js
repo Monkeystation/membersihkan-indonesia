@@ -1,5 +1,4 @@
 import React from 'react';
-//import { useInView } from 'react-intersection-observer';
 import { InView } from 'react-intersection-observer';
 import { Parallax } from 'react-parallax'
 
