@@ -6,6 +6,7 @@ import { FaFacebookF, FaTwitter } from 'react-icons/fa'
 import ReactGA from 'react-ga'
 import { Parallax } from 'react-parallax'
 
+import LazyParallax from '../components/LazyParallax'
 import Layout from '../components/Layout'
 import Video from '../components/Video'
 import PreviewCompatibleFile from '../components/PreviewCompatibleFile'
@@ -52,7 +53,7 @@ export const IndexPageTemplate = ({
       </section>
 
       <section className="problem">
-        <Parallax 
+        <LazyParallax 
           bgImage={PreviewCompatibleFile(problem.image_item.image.childImageSharp.fluid.src)} 
           bgImageSizes={problem.image_item.image.childImageSharp.fluid.sizes}
           bgImageSrcSet={problem.image_item.image.childImageSharp.fluid.srcSet}
@@ -60,7 +61,7 @@ export const IndexPageTemplate = ({
           <section className="container has-text-centered section">
             <h1 className="title is-1 has-text-light">{problem.heading}</h1>
           </section>
-        </Parallax>
+        </LazyParallax>
         <section className="content hero section"
           style={{backgroundImage:`url(${'/img/fish.png'})`}}>
           <span className="caption is-size-7" dangerouslySetInnerHTML={{__html: md.render(problem.image_item.caption)}}></span>
@@ -71,7 +72,7 @@ export const IndexPageTemplate = ({
       </section>
 
       <section className="cause">
-        <Parallax 
+        <LazyParallax 
           bgImage={PreviewCompatibleFile(cause.image_item.image.childImageSharp.fluid.src)} 
           bgImageSizes={cause.image_item.image.childImageSharp.fluid.sizes}
           bgImageSrcSet={cause.image_item.image.childImageSharp.fluid.srcSet}
@@ -79,7 +80,7 @@ export const IndexPageTemplate = ({
           <div className="container has-text-centered section">
             <h1 className="title is-1 has-text-light">{cause.heading}</h1>
           </div>
-        </Parallax>
+        </LazyParallax>
         <section className="content hero section"
           style={{backgroundImage:`url(${'/img/shells.png'})`}}>
           <span className="caption is-size-7" dangerouslySetInnerHTML={{__html: md.render(cause.image_item.caption)}}></span>
@@ -91,7 +92,7 @@ export const IndexPageTemplate = ({
       </section>
 
       <section className="solution">
-        <Parallax 
+        <LazyParallax 
           bgImage={PreviewCompatibleFile(solution.image_item.image.childImageSharp.fluid.src)} 
           bgImageSizes={solution.image_item.image.childImageSharp.fluid.sizes}
           bgImageSrcSet={solution.image_item.image.childImageSharp.fluid.srcSet}
@@ -99,7 +100,7 @@ export const IndexPageTemplate = ({
         <div className="container has-text-centered section">
           <h1 className="title is-1 has-text-light">{solution.heading}</h1>
         </div>
-        </Parallax>
+        </LazyParallax>
         <section className="content hero section"
           style={{backgroundImage:`url(${'/img/fish.png'})`}}>
           <span className="caption is-size-7" dangerouslySetInnerHTML={{__html: md.render(solution.image_item.caption)}}></span>
@@ -145,7 +146,7 @@ export const IndexPageTemplate = ({
       </section>
 
       <section className="other">
-        <Parallax 
+        <LazyParallax 
           bgImage={PreviewCompatibleFile(other.image_item.image.childImageSharp.fluid.src)} 
           bgImageSizes={other.image_item.image.childImageSharp.fluid.sizes}
           bgImageSrcSet={other.image_item.image.childImageSharp.fluid.srcSet}
@@ -153,7 +154,7 @@ export const IndexPageTemplate = ({
           <div className="container has-text-centered section">
             <h1 className="title is-1 has-text-light">{other.heading}</h1>
           </div>
-        </Parallax>
+        </LazyParallax>
         <section className="content hero section"
           style={{backgroundImage:`url(${'/img/shells.png'})`}}>
           <span className="caption is-size-7" dangerouslySetInnerHTML={{__html: md.render(other.image_item.caption)}}></span>
@@ -171,7 +172,7 @@ export const IndexPageTemplate = ({
       </section>
 
       <section className="social">
-        <Parallax 
+        <LazyParallax 
           bgImage={PreviewCompatibleFile(social.image_item.image.childImageSharp.fluid.src)} 
           bgImageSizes={social.image_item.image.childImageSharp.fluid.sizes}
           bgImageSrcSet={social.image_item.image.childImageSharp.fluid.srcSet}
@@ -179,7 +180,7 @@ export const IndexPageTemplate = ({
           <div className="container has-text-centered section">
             <h1 className="title is-1 has-text-light">{social.heading}</h1>
           </div>        
-        </Parallax>
+        </LazyParallax>
         <section className="content hero section"
           style={{backgroundImage:`url(${'/img/fish.png'})`}}>
           <span className="caption is-size-7" dangerouslySetInnerHTML={{__html: md.render(social.image_item.caption)}}></span>
