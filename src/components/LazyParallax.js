@@ -42,7 +42,6 @@ const LazyParallax = ({ children, image, height, strength}) => {
   );
 
   useEffect(() => {
-    if (typeof window === 'undefined') return
     const onScroll = () => {
       if(!tickingRef.current) {
         requestAnimationFrame(animate);
@@ -78,6 +77,7 @@ const LazyParallax = ({ children, image, height, strength}) => {
         src={image.childImageSharp.fluid.src}
         srcSet={image.childImageSharp.fluid.srcSet}
         sizes={image.childImageSharp.fluid.sizes}
+        loading="lazy"
         style={imgStyle}
       >
       </img>

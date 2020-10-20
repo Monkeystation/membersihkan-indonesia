@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Link } from 'react-scroll'
@@ -26,8 +26,23 @@ export const IndexPageTemplate = ({
   other,
   social
 }) => {
-  let parallaxStrength = 200
-  let parallaxHeight = 400
+  const [parallaxStrength, setParallaxStrength] = useState(250)
+  const [parallaxHeight, setParallaxHeight] = useState(500)
+
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth > 768) {
+        setParallaxStrength(250)
+        setParallaxHeight(500)
+      } else {
+        setParallaxStrength(150)
+        setParallaxHeight(300)
+      }
+    }
+    window.addEventListener("resize", onResize, false);
+    return () => window.removeEventListener("resize", onResize, false);
+  }, [parallaxHeight, parallaxStrength]);
+
   return (
     <>
       <section className="intro">
