@@ -4,10 +4,21 @@ import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 const LazyParallax = ({ children, image, height, strength}) => {
   const ref = useRef();
-  const requestRef = useRef()
+  const tickingRef = useRef()
   const imgHeight = height + strength
-  const [inViewRef, inView] = useInView({triggerOnce: false})
-  const [transform, setTransform] = useState({transform: 'translate3d(-50%, 0, 0)'})
+  const [inViewRef, inView] = useInView({triggerOnce: true})
+  const [imgStyle, setImgStyle] = useState({
+    position:'absolute',
+    left: '50%',
+    width: '100%',
+    height: imgHeight+`px`,
+    transform: 'translate3d(-50%, 0, 0)',
+    WebkitTransformStyle: 'preserve-3d',
+    WebkitBackfaceVisibility: 'hidden',
+    MozBackfaceVisibility: 'hidden',
+    MsBackfaceVisibility: 'hidden',
+  })
+  let timestamp = Date.now();
 
   const wrapperStyle = {
     overflow:'hidden', 
@@ -15,11 +26,11 @@ const LazyParallax = ({ children, image, height, strength}) => {
     height: height+'px'
   }
 
-  const imageStyle = {
+  const childrenStyle = {
     position:'absolute',
-    left: '50%',
     width: '100%',
-    height: imgHeight + `px`,
+    height: height+`px`,
+    zIndex: 1
   }
 
   const setRefs = useCallback(
@@ -31,33 +42,48 @@ const LazyParallax = ({ children, image, height, strength}) => {
   );
 
   useEffect(() => {
+    if (typeof window === 'undefined') return
+    const onScroll = () => {
+      if(!tickingRef.current) {
+        requestAnimationFrame(animate);
+        tickingRef.current = true
+      }
+    }
     const animate = () => {
       const r = ref.current.getBoundingClientRect()
       const vpHeight = window.innerHeight
       const p = (r.top + r.height) / (vpHeight + r.height)
       const pos = strength * p;
       const transform = `translate3d(-50%, ${-pos}px, 0)`
-      setTransform({WebkitTransform: transform, transform})
+      setImgStyle(prevState => ({
+        ...prevState, WebkitTransform: transform, transform
+      }))
     }
     if (inView) {
-      window.addEventListener("scroll", animate);
+      window.addEventListener("scroll", onScroll, false);
     } else {
-      window.removeEventListener("scroll", animate);
+      window.removeEventListener("scroll", onScroll, false);
     }
-    return () => window.removeEventListener("scroll", animate);
-  }, [inView, transform, strength, ref]);
+    return () => window.removeEventListener("scroll", onScroll, false);
+  }, [inView]);
 
-  
-
+  useEffect(() => {
+    tickingRef.current = false
+  }, [imgStyle]);
+ 
   return (
     <div className="parallax" ref={setRefs} style={wrapperStyle}>
-      <PreviewCompatibleImage imageInfo={{image, style:{...imageStyle, ...transform}}} />
-      <div className="parallax-content" style={{position:'relative'}}>
-        {children}
-      </div>
-      
+      <div className="parallax-content" style={childrenStyle}>{children}</div>
+      <img 
+        src={image.childImageSharp.fluid.src}
+        srcSet={image.childImageSharp.fluid.srcSet}
+        sizes={image.childImageSharp.fluid.sizes}
+        style={imgStyle}
+      >
+      </img>
     </div>
   )
 }
-
 export default LazyParallax
+
+/* <PreviewCompatibleImage imageInfo={{image, imgStyle}} />  */

@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import { Link } from 'react-scroll'
 import { FaFacebookF, FaTwitter } from 'react-icons/fa'
 import ReactGA from 'react-ga'
+import { Parallax } from 'react-parallax'
 
 import LazyParallax from '../components/LazyParallax'
 import LazyComponent from '../components/LazyComponent'
@@ -62,6 +63,15 @@ export const IndexPageTemplate = ({
             <h1 className="title is-1 has-text-light">{problem.heading}</h1>
           </section>
         </LazyParallax>
+        {/* <Parallax 
+          bgImage={PreviewCompatibleFile(problem.image_item.image.childImageSharp.fluid.src)} 
+          bgImageSizes={problem.image_item.image.childImageSharp.fluid.sizes}
+          bgImageSrcSet={problem.image_item.image.childImageSharp.fluid.srcSet}
+          strength={parallaxStrength}>
+          <section className="container has-text-centered section">
+            <h1 className="title is-1 has-text-light">{problem.heading}</h1>
+          </section>
+        </Parallax> */}
         <section className="content hero section"
           style={{backgroundImage:`url(${'/img/fish.png'})`}}>
           <span className="caption is-size-7" dangerouslySetInnerHTML={{__html: md.render(problem.image_item.caption)}}></span>
