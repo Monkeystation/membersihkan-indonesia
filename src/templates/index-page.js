@@ -26,8 +26,8 @@ export const IndexPageTemplate = ({
   other,
   social
 }) => {
-  let parallaxStrength = (typeof window !== 'undefined' && window.innerWidth > 768) ? 300 : 100
-  let parallaxHeight = (typeof window !== 'undefined' && window.innerWidth > 768) ? 500 : 250
+  let parallaxStrength = 200
+  let parallaxHeight = 400
   return (
     <>
       <section className="intro">
