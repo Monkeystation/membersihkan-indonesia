@@ -40,6 +40,7 @@ export const IndexPageTemplate = ({
       }
     }
     window.addEventListener("resize", onResize, false);
+    onResize()
     return () => window.removeEventListener("resize", onResize, false);
   }, [parallaxHeight, parallaxStrength]);
 
