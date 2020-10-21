@@ -69,18 +69,21 @@ const LazyParallax = ({ children, image, height, strength}) => {
   useEffect(() => {
     tickingRef.current = false
   }, [imgStyle]);
- 
+
   return (
     <div className="parallax" ref={setRefs} style={wrapperStyle}>
       <div className="parallax-content" style={childrenStyle}>{children}</div>
-      <img 
-        src={image.childImageSharp.fluid.src}
-        srcSet={image.childImageSharp.fluid.srcSet}
-        sizes={image.childImageSharp.fluid.sizes}
-        loading="lazy"
-        style={imgStyle}
-      >
-      </img>
+      <picture>
+        <source type="image/webp" srcSet={image.childImageSharp.fluid.srcSetWebp} sizes={image.childImageSharp.fluid.sizes} />
+        <source type="image/jpeg" srcSet={image.childImageSharp.fluid.srcSet} sizes={image.childImageSharp.fluid.sizes} />
+        <img 
+          src={image.childImageSharp.fluid.src}
+          srcSet={image.childImageSharp.fluid.srcSet}
+          sizes={image.childImageSharp.fluid.sizes}
+          loading="lazy"
+          style={imgStyle}
+        />
+      </picture>
     </div>
   )
 }
