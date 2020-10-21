@@ -1,24 +1,22 @@
 import React, {useEffect, useRef, useCallback, useState} from 'react'
 import { useInView } from 'react-intersection-observer'
-import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 const LazyParallax = ({ children, image, height, strength}) => {
   const ref = useRef();
   const tickingRef = useRef()
-  const imgHeight = height + strength
   const [inViewRef, inView] = useInView({triggerOnce: false})
   const [imgStyle, setImgStyle] = useState({
     position:'absolute',
     left: '50%',
     width: '100%',
-    height: imgHeight+`px`,
+    height: (height + strength) + `px`,
+    objectFit: 'cover',
     transform: 'translate3d(-50%, 0, 0)',
     WebkitTransformStyle: 'preserve-3d',
     WebkitBackfaceVisibility: 'hidden',
     MozBackfaceVisibility: 'hidden',
     MsBackfaceVisibility: 'hidden',
   })
-  let timestamp = Date.now();
 
   const wrapperStyle = {
     overflow:'hidden', 
@@ -40,6 +38,12 @@ const LazyParallax = ({ children, image, height, strength}) => {
     },
     [inViewRef],
   );
+
+  useEffect(() => {
+    setImgStyle(prevState => ({
+      ...prevState, height: (height + strength) + `px`,
+    }))
+  }, [height, strength])
 
   useEffect(() => {
     const onScroll = () => {
@@ -64,7 +68,7 @@ const LazyParallax = ({ children, image, height, strength}) => {
       window.removeEventListener("scroll", onScroll, false);
     }
     return () => window.removeEventListener("scroll", onScroll, false);
-  }, [inView]);
+  }, [inView, strength]);
 
   useEffect(() => {
     tickingRef.current = false
@@ -81,6 +85,7 @@ const LazyParallax = ({ children, image, height, strength}) => {
           srcSet={image.childImageSharp.fluid.srcSet}
           sizes={image.childImageSharp.fluid.sizes}
           loading="lazy"
+          alt=""
           style={imgStyle}
         />
       </picture>

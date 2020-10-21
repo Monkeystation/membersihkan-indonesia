@@ -27,7 +27,7 @@ const ScrollAnimation = ({ offset=150, animateIn, duration=1, animateOnce=false,
     if (inView && entry.intersectionRatio === 1) {
       setClasses(`animated ${animateIn}`)
     }
-  }, [entry]);
+  }, [entry, inView, animateIn]);
 
   useEffect(() => {
     if (!inView) {
@@ -36,7 +36,7 @@ const ScrollAnimation = ({ offset=150, animateIn, duration=1, animateOnce=false,
         opacity: initiallyVisible ? 1 : 0
       })
     }
-  }, [inView]);
+  }, [inView, initiallyVisible]);
 
   return (
     <div ref={setRefs} className={`${className} ${classes}`} style={Object.assign({}, aniStyle, style)}>

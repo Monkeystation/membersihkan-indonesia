@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import { useInView } from 'react-intersection-observer'
 
 const LazyJuicer = (props) => {
-  const [ref, inView, entry] = useInView({
+  const [ref, inView] = useInView({
     triggerOnce: true,
     rootMargin:"500px"
   })

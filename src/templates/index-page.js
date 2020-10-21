@@ -4,7 +4,6 @@ import { graphql } from 'gatsby'
 import { Link } from 'react-scroll'
 import { FaFacebookF, FaTwitter } from 'react-icons/fa'
 import ReactGA from 'react-ga'
-import { Parallax } from 'react-parallax'
 
 import LazyParallax from '../components/LazyParallax'
 import Layout from '../components/Layout'
