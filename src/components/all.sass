@@ -14,6 +14,7 @@ $body-background-color: #f9f9e8
 $body-font-size: 1.5rem
 $size-1: 3.5rem
 $navbar-height: 64px
+$navbar-breakpoint: 0
 $navbar-padding-vertical: 10px
 $navbar-item-img-max-height: 3rem
 $navbar-background-color: $primary
@@ -33,12 +34,10 @@ html
 
 .navbar
   .navbar-menu
-    .navbar-item .social
-      padding: 0.5rem
-    &.is-active
-      .navbar-end
-        display: flex
-        justify-content: center
+    .navbar-end
+      padding-right: 0.5rem
+      .navbar-item .social
+        padding: 0rem
 
 .container
   width: 100% !important
@@ -55,6 +54,9 @@ html
 
 .hero.content
   position: relative
+
+.hero.is-fullheight-with-navbar 
+  min-height: -webkit-fill-available
 
 .caption
   position: absolute

@@ -37,7 +37,7 @@ const Navbar = class extends React.Component {
       <nav className="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <Link to="/" className="navbar-item" title="Logo">
-            <img src={logo} alt="Membersihkan Indonesia" style={{ height: '2rem' }} />
+            <img src={logo} alt="Membersihkan Indonesia" style={{ height: '2.5rem' }} />
           </Link>
 
           <div
@@ -57,10 +57,10 @@ const Navbar = class extends React.Component {
         <div className={`navbar-menu ${this.state.navBarActiveClass}`}>
           <div className="navbar-end">
             <div className="navbar-item">
-              <a className="button is-primary is-light social" href="https://www.facebook.com/membersihkanID" target="_blank" rel="noreferrer" aria-label="Facebook link"><FaFacebookSquare size={30} /></a>
+              <a className="button is-primary social" href="https://www.facebook.com/membersihkanID" target="_blank" rel="noreferrer" aria-label="Facebook link"><FaFacebookSquare size={40} /></a>
             </div>
             <div className="navbar-item">
-              <a className="button is-primary is-light social" href="https://www.instagram.com/membersihkan_id/" target="_blank" rel="noreferrer" aria-label="Instagram link"><FaInstagramSquare size={30} /></a>
+              <a className="button is-primary social" href="https://www.instagram.com/membersihkan_id/" target="_blank" rel="noreferrer" aria-label="Instagram link"><FaInstagramSquare size={40} /></a>
             </div>
             {/* <div className="navbar-item">
               <Link className="button is-primary is-light" to="/support">Support us</Link>
