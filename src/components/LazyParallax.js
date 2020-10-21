@@ -6,7 +6,7 @@ const LazyParallax = ({ children, image, height, strength}) => {
   const ref = useRef();
   const tickingRef = useRef()
   const imgHeight = height + strength
-  const [inViewRef, inView] = useInView({triggerOnce: true})
+  const [inViewRef, inView] = useInView({triggerOnce: false})
   const [imgStyle, setImgStyle] = useState({
     position:'absolute',
     left: '50%',
