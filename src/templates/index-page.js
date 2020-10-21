@@ -9,6 +9,7 @@ import { Parallax } from 'react-parallax'
 import LazyParallax from '../components/LazyParallax'
 import Layout from '../components/Layout'
 import LazyVideo from '../components/LazyVideo'
+import LazyJuicer from '../components/LazyJuicer'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import ScrollAnimation from '../components/ScrollAnimation'
 
@@ -255,9 +256,7 @@ export const IndexPageTemplate = ({
           style={{backgroundImage:`url(${'/img/shells.png'})`}}>
           <div>
           <h1 className="title is-2 has-text-primary has-text-centered">#membersihkanindonesia</h1>
-          <ul className="juicer-feed" data-feed-id="membersihkanindonesia" data-per="12">
-            <h1 className="referral"><a href="https://www.juicer.io">Powered by Juicer</a></h1>
-          </ul>
+          <LazyJuicer />
           </div>
         </section>
       </section>
