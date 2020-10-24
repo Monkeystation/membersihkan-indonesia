@@ -136,7 +136,7 @@ export const IndexPageTemplate = ({
             <ScrollAnimation animateIn="fadeInUp">
               <h1 className="is-size-1 has-text-light">{solution.we.caption}</h1>
             </ScrollAnimation>
-            <ul>
+            <ul className="is-light-list">
               {solution.we.items.map((item, index) => (
                 <ScrollAnimation key={`item` + index} animateIn="fadeInUp">
                   <li>
@@ -156,7 +156,7 @@ export const IndexPageTemplate = ({
             <ScrollAnimation animateIn="fadeInUp">
               <p>{solution.community.text}</p>
             </ScrollAnimation>
-            <ul>
+            <ul className="is-primary-list">
               {solution.community.items.map((item, index) => (
                 <ScrollAnimation key={`item` + index} animateIn="fadeInUp">
                   <li>
@@ -176,7 +176,7 @@ export const IndexPageTemplate = ({
             <ScrollAnimation animateIn="fadeInUp">
               <p>{solution.government.text}</p>
             </ScrollAnimation>
-            <ul>
+            <ul className="is-light-list">
               {solution.government.items.map((item, index) => (
                 <ScrollAnimation key={`item` + index} animateIn="fadeInUp">
                   <li>
@@ -207,7 +207,7 @@ export const IndexPageTemplate = ({
             <ScrollAnimation animateIn="fadeInUp">
               <p>{other.text}</p>
             </ScrollAnimation>
-            <ul>
+            <ul className="is-primary-list">
               {other.items.map((item, index) => (
                 <ScrollAnimation key={`item` + index} animateIn="fadeInUp">
                   <li>
