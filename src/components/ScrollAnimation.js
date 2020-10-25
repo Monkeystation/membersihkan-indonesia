@@ -1,48 +1,74 @@
 import React, {useRef, useEffect, useCallback, useState} from 'react';
 import { useInView } from 'react-intersection-observer'
 
-const THRESHOLD = [0, 1];
-
-const ScrollAnimation = ({ offset=150, animateIn, duration=1, animateOnce=false, initiallyVisible=false, style={}, className='', children }) => {
-  const ref = useRef();
-  const [inViewRef, inView, entry] = useInView({
-    triggerOnce: animateOnce,
-    threshold: THRESHOLD
-  })
-  const [classes, setClasses] = useState('animated')
+const ScrollAnimation = ({ 
+  offset = -150, 
+  animationIn = 'fadeIn', 
+  animationOut = false, 
+  duration = 1, 
+  animateOnce = false, 
+  preVisible = false, 
+  style = {}, 
+  className = '', 
+  children = {}
+}) => {
+  
+  const [classes, setClasses] = useState([])
   const [aniStyle, setAniStyle] = useState({
     animationDuration: `${duration}s`,
-    opacity: initiallyVisible ? 1 : 0
+    opacity: preVisible ? 1 : 0
   })
+  const [didAnimateIn, setDidAnimateIn] = useState(false)
+  const [didAnimateOnce, setDidAnimateOnce] = useState(false)
 
+  const [innerViewRef, innerView] = useInView({
+    triggerOnce: false,
+    rootMargin: offset + `px`,
+  })
+  const [outerViewRef, outerView] = useInView()
+
+  const ref = useRef();
   const setRefs = useCallback(
     (node) => {
       ref.current = node;
-      inViewRef(node);
-    },
-    [inViewRef],
+      innerViewRef(node);
+      outerViewRef(node);
+    }, [],
   );
 
-  useEffect(() => {
-    if (inView && entry.intersectionRatio === 1) {
-      setClasses(`animated ${animateIn}`)
+  useEffect(() => { 
+    if (innerView) {
+      if (animateOnce && didAnimateOnce) return
+      setDidAnimateIn(false)
+      setDidAnimateOnce(true) 
+      setClasses([`animated`, animationIn])
+      setTimeout(() => { setDidAnimateIn(true) }, duration * 1000)
+    } else if (!innerView && animationOut && didAnimateIn) {
+      setDidAnimateIn(false)
+      setClasses([`animated`, animationOut])
     }
-  }, [entry, inView, animateIn]);
+  }, [innerView]);
 
   useEffect(() => {
-    if (!inView) {
-      setClasses(`animated`)
-      setAniStyle({
-        opacity: initiallyVisible ? 1 : 0
-      })
+    if (!outerView) {
+      if (didAnimateOnce) {
+        setClasses([`animated`])
+        if (animateOnce) setAniStyle({ opacity: 1 })
+        else setAniStyle({
+          animationDuration: `${duration}s`,
+          opacity: preVisible ? 1 : 0
+        })
+      } 
     }
-  }, [inView, initiallyVisible]);
+  }, [outerView]);
 
   return (
-    <div ref={setRefs} className={`${className} ${classes}`} style={Object.assign({}, aniStyle, style)}>
+    <div ref={setRefs} className={[className, classes.join(' ')].filter(Boolean).join(' ')} style={{...aniStyle, ...style}}>
       {children}
     </div>
   )
 }
 
 export default ScrollAnimation
+
+// className={`${className} ${classes}`}

@@ -63,23 +63,23 @@ export const IndexPageTemplate = ({
           style={{backgroundImage:`url(${'/img/shells.png'})`}}>
           <span className="caption is-size-7" dangerouslySetInnerHTML={{__html: md.render(intro.image_item.caption)}}></span>
           <div className="container has-text-centered">
-            <ScrollAnimation animateIn="fadeInUp">
+            <ScrollAnimation animationIn="fadeInUp">
               <h1 className="title is-1 has-text-primary">{intro.heading}</h1>
             </ScrollAnimation>
-            <ScrollAnimation animateIn="fadeInUp">
+            <ScrollAnimation animationIn="fadeInUp">
               <div dangerouslySetInnerHTML={{__html: md.render(intro.text)}}></div>
             </ScrollAnimation>
           </div>
         </section>
       </section>
-
+      
       <section className="problem">
         <LazyParallax
           image={problem.image_item.image}
           height={parallaxHeight}
           strength={parallaxStrength}>
           <section className="container has-text-centered section">
-            <ScrollAnimation animateIn="fadeInUp">
+            <ScrollAnimation animationIn="fadeInUp">
               <h1 className="title is-1 has-text-light">{problem.heading}</h1>
             </ScrollAnimation>
           </section>
@@ -88,7 +88,7 @@ export const IndexPageTemplate = ({
           style={{backgroundImage:`url(${'/img/fish.png'})`}}>
           <span className="caption is-size-7" dangerouslySetInnerHTML={{__html: md.render(problem.image_item.caption)}}></span>
           <div className="container has-text-centered">
-            <ScrollAnimation animateIn="fadeInUp">
+            <ScrollAnimation animationIn="fadeInUp">
               <div dangerouslySetInnerHTML={{__html: md.render(problem.text)}}></div>
             </ScrollAnimation>
           </div>
@@ -101,7 +101,7 @@ export const IndexPageTemplate = ({
           height={parallaxHeight}
           strength={parallaxStrength}>
           <div className="container has-text-centered section">
-            <ScrollAnimation animateIn="fadeInUp">
+            <ScrollAnimation animationIn="fadeInUp">
               <h1 className="title is-1 has-text-light">{cause.heading}</h1>
             </ScrollAnimation>
           </div>
@@ -110,7 +110,7 @@ export const IndexPageTemplate = ({
           style={{backgroundImage:`url(${'/img/shells.png'})`}}>
           <span className="caption is-size-7" dangerouslySetInnerHTML={{__html: md.render(cause.image_item.caption)}}></span>
           <div className="container has-text-centered">
-            <ScrollAnimation animateIn="fadeInUp">
+            <ScrollAnimation animationIn="fadeInUp">
               <div className="pb-5" dangerouslySetInnerHTML={{__html: md.render(cause.text)}}></div>
             </ScrollAnimation>
             <LazyVideo videoSrcURL={cause.video_item.video} videoTitle={cause.video_item.title} />
@@ -124,7 +124,7 @@ export const IndexPageTemplate = ({
           height={parallaxHeight}
           strength={parallaxStrength}>
         <div className="container has-text-centered section">
-          <ScrollAnimation animateIn="fadeInUp">
+          <ScrollAnimation animationIn="fadeInUp">
             <h1 className="title is-1 has-text-light">{solution.heading}</h1>
           </ScrollAnimation>
         </div>
@@ -133,12 +133,12 @@ export const IndexPageTemplate = ({
           style={{backgroundImage:`url(${'/img/fish.png'})`}}>
           <span className="caption is-size-7" dangerouslySetInnerHTML={{__html: md.render(solution.image_item.caption)}}></span>
           <div className="container">
-            <ScrollAnimation animateIn="fadeInUp">
+            <ScrollAnimation animationIn="fadeInUp">
               <h1 className="is-size-1 has-text-light">{solution.we.caption}</h1>
             </ScrollAnimation>
             <ul className="is-light-list">
               {solution.we.items.map((item, index) => (
-                <ScrollAnimation key={`item` + index} animateIn="fadeInUp">
+                <ScrollAnimation key={`item` + index} animationIn="fadeInUp">
                   <li>
                     <div dangerouslySetInnerHTML={{__html: md.render(item.item)}}></div>
                   </li>
@@ -150,15 +150,15 @@ export const IndexPageTemplate = ({
         <section className="content hero section"
           style={{backgroundImage:`url(${'/img/shells.png'})`}}>
           <div className="container">
-            <ScrollAnimation animateIn="fadeInUp">
+            <ScrollAnimation animationIn="fadeInUp">
               <h1 className="is-size-1 has-text-primary">{solution.community.caption}</h1>
             </ScrollAnimation>
-            <ScrollAnimation animateIn="fadeInUp">
+            <ScrollAnimation animationIn="fadeInUp">
               <p>{solution.community.text}</p>
             </ScrollAnimation>
             <ul className="is-primary-list">
               {solution.community.items.map((item, index) => (
-                <ScrollAnimation key={`item` + index} animateIn="fadeInUp">
+                <ScrollAnimation key={`item` + index} animationIn="fadeInUp">
                   <li>
                     <div dangerouslySetInnerHTML={{__html: md.render(item.item)}}></div>
                   </li>
@@ -170,15 +170,15 @@ export const IndexPageTemplate = ({
         <section className="content hero section"
           style={{backgroundImage:`url(${'/img/fish.png'})`}}>
           <div className="container">
-            <ScrollAnimation animateIn="fadeInUp">
+            <ScrollAnimation animationIn="fadeInUp">
               <h1 className="is-size-1 has-text-light">{solution.government.caption}</h1>
             </ScrollAnimation>
-            <ScrollAnimation animateIn="fadeInUp">
+            <ScrollAnimation animationIn="fadeInUp">
               <p>{solution.government.text}</p>
             </ScrollAnimation>
             <ul className="is-light-list">
               {solution.government.items.map((item, index) => (
-                <ScrollAnimation key={`item` + index} animateIn="fadeInUp">
+                <ScrollAnimation key={`item` + index} animationIn="fadeInUp">
                   <li>
                     <div dangerouslySetInnerHTML={{__html: md.render(item.item)}}></div>
                   </li>
@@ -195,7 +195,7 @@ export const IndexPageTemplate = ({
           height={parallaxHeight}
           strength={parallaxStrength}>
           <div className="container has-text-centered section">
-            <ScrollAnimation animateIn="fadeInUp">
+            <ScrollAnimation animationIn="fadeInUp">
               <h1 className="title is-1 has-text-light">{other.heading}</h1>
             </ScrollAnimation>
           </div>
@@ -204,12 +204,12 @@ export const IndexPageTemplate = ({
           style={{backgroundImage:`url(${'/img/shells.png'})`}}>
           <span className="caption is-size-7" dangerouslySetInnerHTML={{__html: md.render(other.image_item.caption)}}></span>
           <div className="container">
-            <ScrollAnimation animateIn="fadeInUp">
+            <ScrollAnimation animationIn="fadeInUp">
               <p>{other.text}</p>
             </ScrollAnimation>
             <ul className="is-primary-list">
               {other.items.map((item, index) => (
-                <ScrollAnimation key={`item` + index} animateIn="fadeInUp">
+                <ScrollAnimation key={`item` + index} animationIn="fadeInUp">
                   <li>
                     <div dangerouslySetInnerHTML={{__html: md.render(item.item)}}></div>
                   </li>
@@ -226,7 +226,7 @@ export const IndexPageTemplate = ({
           height={parallaxHeight}
           strength={parallaxStrength}>
           <div className="container has-text-centered section">
-            <ScrollAnimation animateIn="fadeInUp">
+            <ScrollAnimation animationIn="fadeInUp">
               <h1 className="title is-1 has-text-light">{social.heading}</h1>
             </ScrollAnimation>
           </div>        
@@ -235,7 +235,7 @@ export const IndexPageTemplate = ({
           style={{backgroundImage:`url(${'/img/fish.png'})`}}>
           <span className="caption is-size-7" dangerouslySetInnerHTML={{__html: md.render(social.image_item.caption)}}></span>
           <div className="container has-text-centered">
-            <ScrollAnimation animateIn="fadeInUp">
+            <ScrollAnimation animationIn="fadeInUp">
               <div dangerouslySetInnerHTML={{__html: md.render(social.text)}}></div>
             </ScrollAnimation>
             <div className="social-share pt-5">
