@@ -47,10 +47,10 @@ const LazyParallax = ({ children, image, height, strength}) => {
 
   useEffect(() => {
     const onScroll = () => {
-      if(!tickingRef.current) {
-        requestAnimationFrame(animate);
-        tickingRef.current = true
-      }
+      // if(!tickingRef.current) {
+      //   requestAnimationFrame(animate);
+      //   tickingRef.current = true
+      // }
     }
     const animate = () => {
       const r = ref.current.getBoundingClientRect()
@@ -63,11 +63,11 @@ const LazyParallax = ({ children, image, height, strength}) => {
       }))
     }
     if (inView) {
-      window.addEventListener("scroll", onScroll, false);
+      window.addEventListener("scroll", animate, false);
     } else {
-      window.removeEventListener("scroll", onScroll, false);
+      window.removeEventListener("scroll", animate, false);
     }
-    return () => window.removeEventListener("scroll", onScroll, false);
+    return () => window.removeEventListener("scroll", animate, false);
   }, [inView, strength]);
 
   useEffect(() => {
