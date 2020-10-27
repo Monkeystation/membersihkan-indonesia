@@ -30,8 +30,8 @@ export const IndexPageTemplate = ({
   const [windowHeight, setWindowHeight] = useState(0)
 
   useEffect(() => {
+    setWindowHeight(window.innerHeight)
     const onResize = () => {
-      setWindowHeight(window.innerHeight)
       if (window.innerWidth > 768) {
         setParallaxStrength(250)
         setParallaxHeight(500)
