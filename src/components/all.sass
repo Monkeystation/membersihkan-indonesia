@@ -19,6 +19,7 @@ $navbar-padding-vertical: 10px
 $navbar-item-img-max-height: 3rem
 $navbar-background-color: $primary
 $footer-padding: 1.5rem
+$spacing-values: ("0": 0, "1": 0.5rem, "2": 1rem, "3": 2rem, "4": 4rem, "5": 6rem, "6": 8rem) 
 
 @import "~bulma"
 
@@ -72,7 +73,9 @@ ul
 .hero.content
   position: relative
 
-.hero.is-fullheight-with-navbar 
+.hero.is-fullheight
+  .hero-body 
+    padding: 0
 
 .caption
   position: absolute

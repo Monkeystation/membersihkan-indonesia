@@ -62,9 +62,9 @@ const Navbar = class extends React.Component {
             <div className="navbar-item">
               <a className="button is-primary social" href="https://www.instagram.com/membersihkan_id/" target="_blank" rel="noreferrer" aria-label="Instagram link"><FaInstagramSquare size={40} /></a>
             </div>
-            {/* <div className="navbar-item">
+            <div className="navbar-item">
               <Link className="button is-primary is-light" to="/support">Support us</Link>
-            </div> */}
+            </div>
           </div>
         </div>
       </nav>

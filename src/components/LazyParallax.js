@@ -77,18 +77,30 @@ const LazyParallax = ({ children, image, height, strength}) => {
   return (
     <div className="parallax" ref={setRefs} style={wrapperStyle}>
       <div className="parallax-content" style={childrenStyle}>{children}</div>
-      <picture>
-        <source type="image/webp" srcSet={image.childImageSharp.fluid.srcSetWebp} sizes={image.childImageSharp.fluid.sizes} />
-        <source type="image/jpeg" srcSet={image.childImageSharp.fluid.srcSet} sizes={image.childImageSharp.fluid.sizes} />
+      {image.childImageSharp &&
+        <picture>
+          <source type="image/webp" srcSet={image.childImageSharp.fluid.srcSetWebp} sizes={image.childImageSharp.fluid.sizes} />
+          <source type="image/jpeg" srcSet={image.childImageSharp.fluid.srcSet} sizes={image.childImageSharp.fluid.sizes} />
+          <img 
+            src={image.childImageSharp.fluid.src}
+            srcSet={image.childImageSharp.fluid.srcSet}
+            sizes={image.childImageSharp.fluid.sizes}
+            loading="lazy"
+            alt=""
+            style={imgStyle}
+          />
+        </picture>
+      }
+      {(typeof image === 'string') &&
+        <picture>
         <img 
-          src={image.childImageSharp.fluid.src}
-          srcSet={image.childImageSharp.fluid.srcSet}
-          sizes={image.childImageSharp.fluid.sizes}
+          src={image}
           loading="lazy"
           alt=""
           style={imgStyle}
         />
       </picture>
+    }
     </div>
   )
 }

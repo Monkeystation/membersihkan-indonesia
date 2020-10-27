@@ -27,9 +27,11 @@ export const IndexPageTemplate = ({
 }) => {
   const [parallaxStrength, setParallaxStrength] = useState(250)
   const [parallaxHeight, setParallaxHeight] = useState(500)
+  const [windowHeight, setWindowHeight] = useState(0)
 
   useEffect(() => {
     const onResize = () => {
+      setWindowHeight(window.innerHeight)
       if (window.innerWidth > 768) {
         setParallaxStrength(250)
         setParallaxHeight(500)
@@ -46,13 +48,14 @@ export const IndexPageTemplate = ({
   return (
     <>
       <section className="intro">
-        <section className="header hero is-fullheight-with-navbar">
-        <div className="hero-image">
-        <PreviewCompatibleImage imageInfo={{
-          image: intro.image_item.image,
-          style: {height: '100%'}
-        }} />
-        </div>
+        <section className="header hero is-fullheight" style={{height: windowHeight}}>
+          <div className="hero-image">
+            <PreviewCompatibleImage imageInfo={{
+              image: intro.image_item.image,
+              style: {height: '100%'},
+              imgStyle: {height: '100%'}
+            }} />
+          </div>
           <div className="hero-body">
             <div className="container has-text-centered">
               <Link className="button is-primary is-large is-bold" to="intro" smooth={true} offset={-64}>{intro.button}</Link>
