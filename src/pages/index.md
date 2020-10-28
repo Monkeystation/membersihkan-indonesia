@@ -1,6 +1,5 @@
 ---
 templateKey: index-page
-button_support: Dukung kami
 intro:
   heading: Inilah yang sedang terjadi
   button: APA YANG SEDANG TERJADI?

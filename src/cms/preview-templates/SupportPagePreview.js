@@ -6,6 +6,7 @@ const SupportPagePreview = ({ entry, widgetFor }) => (
   <SupportPageTemplate
     title={entry.getIn(['data', 'title'])}
     content={widgetFor('body')}
+    button_donate={entry.getIn(['data', 'button_donate'])}
   />
 )
 

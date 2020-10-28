@@ -17,7 +17,6 @@ ReactGA.initialize('UA-78821189-5')
 ReactGA.pageview('Home')
 
 export const IndexPageTemplate = ({
-  button_support,
   intro,
   problem,
   cause,
@@ -267,7 +266,6 @@ export const IndexPageTemplate = ({
 }
 
 IndexPageTemplate.propTypes = {
-  button_support: PropTypes.string,
   intro: PropTypes.object,
   problem: PropTypes.object,
   cause: PropTypes.object,
@@ -282,7 +280,6 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        button_support={frontmatter.button_support}
         intro={frontmatter.intro}
         problem={frontmatter.problem}
         cause={frontmatter.cause}
@@ -308,7 +305,6 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        button_support
         intro {
           heading
           text
