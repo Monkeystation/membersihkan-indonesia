@@ -6,6 +6,7 @@ const ScrollAnimation = ({
   animationIn = 'fadeIn', 
   animationOut = false, 
   duration = 1, 
+  delay = 0,
   animateOnce = false, 
   preVisible = false, 
   style = {}, 
@@ -41,8 +42,16 @@ const ScrollAnimation = ({
       if (animateOnce && didAnimateOnce) return
       setDidAnimateIn(false)
       setDidAnimateOnce(true) 
-      setClasses([`animated`, animationIn])
-      setTimeout(() => { setDidAnimateIn(true) }, duration * 1000)
+      let totalDuration = duration * 1000
+      if (delay) {
+        totalDuration += delay * 1000
+        setTimeout(() => {
+          setClasses([`animated`, animationIn])
+        }, delay * 1000)
+      } else {
+        setClasses([`animated`, animationIn])
+      }
+      setTimeout(() => { setDidAnimateIn(true) }, totalDuration)
     } else if (!innerView && animationOut && didAnimateIn) {
       setDidAnimateIn(false)
       setClasses([`animated`, animationOut])
