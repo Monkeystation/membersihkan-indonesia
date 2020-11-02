@@ -29,6 +29,17 @@ export const IndexPageTemplate = ({
   const [windowHeight, setWindowHeight] = useState(0)
 
   useEffect(() => {
+    if (window.performance) {
+      var timeSincePageLoad = Math.round(performance.now());
+      ReactGA.timing({
+        category: 'Page',
+        variable: 'mount',
+        value: timeSincePageLoad
+      });
+    }
+  }, [])
+
+  useEffect(() => {
     setWindowHeight(window.innerHeight)
     const onResize = () => {
       if (window.innerWidth > 768) {
